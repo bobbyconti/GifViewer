@@ -10,8 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class Giphy;
+
 @interface CollectionViewCell : UICollectionViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) Giphy *giphy;
 
 @end
 

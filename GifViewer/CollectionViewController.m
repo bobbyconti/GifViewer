@@ -8,8 +8,11 @@
 
 #import "CollectionViewController.h"
 #import "CollectionViewCell.h"
+#import "Giphy.h"
 
 @interface CollectionViewController ()
+
+@property (strong, nonatomic) NSMutableArray *giphys;
 
 @end
 
@@ -24,7 +27,37 @@ static NSString * const reuseIdentifier = @"GifViewerCell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Do any additional setup after loading the view.
+    [self refreshImages];
 }
+
+- (void) refreshImages {
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURL *url = [NSURL URLWithString:@"https://api.giphy.com/v1/gifs/trending?api_key=z9yuqZNSCiVLHK94BCozHjxBjwvGrXq3&rating=pg"];
+    
+    self.giphys = [NSMutableArray array];
+    
+    NSURLSessionDownloadTask *task = [session downloadTaskWithURL:url completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        NSData *data = [[NSData alloc] initWithContentsOfURL:location];
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        
+        // Data array > images > downsized_still > url
+        NSArray *dictionaries = [dictionary valueForKey:@"data"];
+        
+        for (NSDictionary *dict in dictionaries) {
+            Giphy *giphy = [Giphy giphyWithDictionary:dict];
+            [self.giphys addObject:giphy];
+        }
+        
+        NSLog(@"%@", self.giphys);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+        });
+    }];
+    [task resume];
+}
+
 
 /*
 #pragma mark - Navigation
@@ -44,14 +77,15 @@ static NSString * const reuseIdentifier = @"GifViewerCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 48;
+    return [self.giphys count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
-    cell.imageView.image = [UIImage imageNamed:@"default"];
+    Giphy *giphy = [self.giphys objectAtIndex:indexPath.row];
+    cell.giphy = giphy;
     
     return cell;
 }
