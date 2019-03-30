@@ -15,6 +15,7 @@
 		C54E97BE224D7998000B6240 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C54E97BD224D7998000B6240 /* CollectionViewController.m */; };
 		C54E97C1224D7D3B000B6240 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C54E97C0224D7D3B000B6240 /* CollectionViewCell.m */; };
 		C54E97C4224FCD5E000B6240 /* Giphy.m in Sources */ = {isa = PBXBuildFile; fileRef = C54E97C3224FCD5E000B6240 /* Giphy.m */; };
+		C54E97C7224FD868000B6240 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C54E97C6224FD868000B6240 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		C54E97C0224D7D3B000B6240 /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		C54E97C2224FCD5E000B6240 /* Giphy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Giphy.h; sourceTree = "<group>"; };
 		C54E97C3224FCD5E000B6240 /* Giphy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Giphy.m; sourceTree = "<group>"; };
+		C54E97C5224FD868000B6240 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		C54E97C6224FD868000B6240 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				C54E97A7224D78A0000B6240 /* AppDelegate.m */,
 				C54E97BC224D7998000B6240 /* CollectionViewController.h */,
 				C54E97BD224D7998000B6240 /* CollectionViewController.m */,
+				C54E97C5224FD868000B6240 /* DetailViewController.h */,
+				C54E97C6224FD868000B6240 /* DetailViewController.m */,
 				C54E97BF224D7D3B000B6240 /* CollectionViewCell.h */,
 				C54E97C0224D7D3B000B6240 /* CollectionViewCell.m */,
 				C54E97C2224FCD5E000B6240 /* Giphy.h */,
@@ -156,6 +161,7 @@
 				C54E97C4224FCD5E000B6240 /* Giphy.m in Sources */,
 				C54E97C1224D7D3B000B6240 /* CollectionViewCell.m in Sources */,
 				C54E97BE224D7998000B6240 /* CollectionViewController.m in Sources */,
+				C54E97C7224FD868000B6240 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
