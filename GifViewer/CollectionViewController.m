@@ -94,6 +94,14 @@ static NSString * const reuseIdentifier = @"GifViewerCell";
     return cell;
 }
 
+// Set cell size according to screen size to get 3 column grid on all devices
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat width = ([UIScreen mainScreen].bounds.size.width - 20) / 3;
+    return CGSizeMake(width, width);
+}
+
+
 #pragma mark <UICollectionViewDelegate>
 
 // Performs segue on the selected gif in the feed
