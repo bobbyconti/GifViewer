@@ -31,7 +31,7 @@ static NSString * const reuseIdentifier = @"GifViewerCell";
 // Open a new session a fetch images from Giphy API
 - (void) refreshImages {
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURL *url = [NSURL URLWithString:@"https://api.giphy.com/v1/gifs/trending?api_key=z9yuqZNSCiVLHK94BCozHjxBjwvGrXq3&rating=pg"];
+    NSURL *url = [NSURL URLWithString:@"https://api.giphy.com/v1/gifs/trending?api_key=YOURAPIKEY&rating=pg"];
     
     self.giphys = [NSMutableArray array];
     
