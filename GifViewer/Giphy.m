@@ -10,6 +10,7 @@
 
 @implementation Giphy
 
+// Defines path for still and animated gifs
 + (instancetype) giphyWithDictionary:(NSDictionary *) dictionary {
     Giphy *giphy = [[Giphy alloc] init];
     

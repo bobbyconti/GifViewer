@@ -17,6 +17,7 @@
     [self downloadImageWithURL:giphy.stillImageURL];
 }
 
+// Downloads still image for collection view feed
 - (void)downloadImageWithURL:(NSURL *)url {
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:60];

@@ -24,13 +24,10 @@ static NSString * const reuseIdentifier = @"GifViewerCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Do any additional setup after loading the view.
     [self refreshImages];
 }
 
+// Open a new session a fetch images from Giphy API
 - (void) refreshImages {
     NSURLSession *session = [NSURLSession sharedSession];
     NSURL *url = [NSURL URLWithString:@"https://api.giphy.com/v1/gifs/trending?api_key=z9yuqZNSCiVLHK94BCozHjxBjwvGrXq3&rating=pg"];
@@ -39,6 +36,7 @@ static NSString * const reuseIdentifier = @"GifViewerCell";
     
     NSURLSessionDownloadTask *task = [session downloadTaskWithURL:url completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
+        // Parse JSON data into a dictionary
         NSData *data = [[NSData alloc] initWithContentsOfURL:location];
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         
@@ -62,7 +60,7 @@ static NSString * const reuseIdentifier = @"GifViewerCell";
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// Call up detail view when gif is selected
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showDetail"]) {
         NSIndexPath *selectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
@@ -76,19 +74,20 @@ static NSString * const reuseIdentifier = @"GifViewerCell";
 
 #pragma mark <UICollectionViewDataSource>
 
+// Feed should only show one main section
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
 
-
+// Feed should return number of gifs received in JSON session
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.giphys count];
 }
 
+// Configure each cell in the collection view
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
     Giphy *giphy = [self.giphys objectAtIndex:indexPath.row];
     cell.giphy = giphy;
     
@@ -97,6 +96,7 @@ static NSString * const reuseIdentifier = @"GifViewerCell";
 
 #pragma mark <UICollectionViewDelegate>
 
+// Performs segue on the selected gif in the feed
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     [self performSegueWithIdentifier:@"showDetail" sender:self];

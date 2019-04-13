@@ -15,6 +15,7 @@
 
 @implementation DetailViewController
 
+// Loads detail view with animated gif
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -27,6 +28,9 @@
     [self setupGestures];
 }
 
+#pragma mark - Gestures
+
+// Setup tap and swipe right gestures
 - (void)setupGestures {
     UITapGestureRecognizer *dismiss = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
     
@@ -39,6 +43,7 @@
     [self.view addGestureRecognizer:swipe];
 }
 
+// Tap to dismiss with animation
 - (void)dismiss {
     
     [UIView animateWithDuration:0.75 animations:^{
@@ -49,6 +54,7 @@
     }];
 }
 
+// Swipe right to dismiss with animation
 - (void)swipeToDismiss {
     [UIView animateWithDuration:0.5 animations:^{
         self.view.transform = CGAffineTransformMakeTranslation(400, 0);
@@ -56,15 +62,5 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
