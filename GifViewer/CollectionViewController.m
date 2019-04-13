@@ -10,6 +10,7 @@
 #import "CollectionViewCell.h"
 #import "Giphy.h"
 #import "DetailViewController.h"
+#import "CollectionViewHeader.h"
 
 @interface CollectionViewController ()
 
@@ -108,6 +109,16 @@ static NSString * const reuseIdentifier = @"GifViewerCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     [self performSegueWithIdentifier:@"showDetail" sender:self];
+}
+
+// Creates header view sets label text in collection view
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    CollectionViewHeader *headerView;
+    if (kind == UICollectionElementKindSectionHeader){
+        headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        headerView.headerLabel.text = @"Trending";
+    }
+    return headerView;
 }
 
 @end
