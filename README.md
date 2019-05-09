@@ -1,4 +1,4 @@
-# GifViewer
+# GifViewerApp
 
 ## Overview
 
