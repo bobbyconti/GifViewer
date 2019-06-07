@@ -1,10 +1,10 @@
-# GifViewerApp
+# GifViewer
 
 ## Overview
 
 <div style="width: 1000px; height 600px;"><img src="screencap.gif" width="30%" height="30%" align="right"></div>
 
-GifViewerApp is an iOS app that allows users to browse trending gifs from the Giphy API. Users can scroll through the grid, select a gif, which opens a full-sized, animated version of the gif, and then tap or swipe right to dismiss. The app incorporates:
+GifViewer is an iOS app that allows users to browse trending gifs from the Giphy API. Users can scroll through the grid, select a gif, which opens a full-sized, animated version of the gif, and then tap or swipe right to dismiss. The app incorporates:
 
 - Objective-C
 - Collection Views
