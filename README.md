@@ -24,6 +24,8 @@ Additional features were added to the original functionality of the app, includi
 
 ## :white_check_mark: Getting Started
 
+> :warning: This app is not available on the App Store.
+
 ### Prerequisites
 
 - A valid API key from Giphy
@@ -42,8 +44,6 @@ Additional features were added to the original functionality of the app, includi
 ```
 
 4. Run the simulator
-
-> :warning: This app is not available on the App Store.
 
 ## :clap: Acknowledgements
 
