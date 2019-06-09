@@ -47,6 +47,8 @@ Additional features were added to the original functionality of the app, includi
 
 ## :clap: Acknowledgements
 
-GifViewer is a project from the [Displaying API Data with Collection Views in Objective-C](https://teamtreehouse.com/library/displaying-api-data-with-collection-views-in-objectivec-2) course at [Treehouse](https://teamtreehouse.com). All custom code is my own, but rights to the original concept and base code are reserved by Treehouse.
+The following resources were used in the development of this project. All custom code is my own.
+
+- [Displaying API Data with Collection Views in Objective-C](https://teamtreehouse.com/library/displaying-api-data-with-collection-views-in-objectivec-2)
 
 Interested in learning more about iOS Development? [Sign up today](http://referrals.trhou.se/bobbyconti1)!
