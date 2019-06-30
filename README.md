@@ -1,10 +1,10 @@
 # GifViewer
 
-## :clipboard: Overview
+## Overview
 
 <div style="width: 1000px; height 600px;"><img src="screencap.gif" width="30%" height="30%" align="right"></div>
 
-GifViewer is an iOS app that allows users to browse trending gifs from the Giphy API. Users can scroll through the grid, select a gif, which opens a detail view of the gif, and then tap or swipe right to dismiss. The app incorporates:
+GifViewer is an app that allows users to browse trending gifs from the Giphy API! Call up a detail view of the full-sized gif, and dismiss the view using gestures and animations! The app incorporates:
 
 - Objective-C
 - Collection Views
@@ -15,16 +15,16 @@ GifViewer is an iOS app that allows users to browse trending gifs from the Giphy
 - UIView Animations
 - Gestures
 
-## :hammer_and_wrench: Custom Features
+## Custom Features
 
 Additional features were added to the original functionality of the app, including:
 
 - Collection View Header (UICollectionReusableView)
 - Auto Layout (shows 3-column, auto-sizing layout on all devices)
 
-## :white_check_mark: Getting Started
+## Getting Started
 
-> :warning: This app is not available on the App Store.
+> This app is not available on the App Store.
 
 ### Prerequisites
 
@@ -45,7 +45,7 @@ Additional features were added to the original functionality of the app, includi
 
 4. Run the simulator
 
-## :clap: Acknowledgements
+## Acknowledgements
 
 The following resources were used in the development of this project. All custom code is my own.
 
